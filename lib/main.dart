@@ -28,6 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedChoice;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,6 +52,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       title: Text('1'),
                       leading: Radio(
                         value: 1,
+                        groupValue: _selectedChoice,
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedChoice = value;
+                          });
+                        },
                       ),
                     ),
                     ListTile(
