@@ -51,6 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ListTile(
                       title: Text('1'),
                       leading: Radio(
+                        toggleable: true,
                         value: 1,
                         groupValue: _selectedChoice,
                         onChanged: (value) {
