@@ -34,6 +34,47 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: Container());
+        body: Padding(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '1. จงหาคำตอบของ 1 + 1',
+                style: TextStyle(fontSize: 30),
+              ),
+              Expanded(
+                child: ListView(
+                  children: [
+                    ListTile(
+                      title: Text('1'),
+                      leading: Radio(
+                        value: 1,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text('2'),
+                      leading: Radio(
+                        value: 2,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text('3'),
+                      leading: Radio(
+                        value: 3,
+                      ),
+                    ),
+                    ListTile(
+                      title: Text('4'),
+                      leading: Radio(
+                        value: 4,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }
