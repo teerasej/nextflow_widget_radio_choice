@@ -64,18 +64,36 @@ class _MyHomePageState extends State<MyHomePage> {
                       title: Text('2'),
                       leading: Radio(
                         value: 2,
+                        groupValue: _selectedChoice,
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedChoice = value;
+                          });
+                        },
                       ),
                     ),
                     ListTile(
                       title: Text('3'),
                       leading: Radio(
                         value: 3,
+                        groupValue: _selectedChoice,
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedChoice = value;
+                          });
+                        },
                       ),
                     ),
                     ListTile(
                       title: Text('4'),
                       leading: Radio(
                         value: 4,
+                        groupValue: _selectedChoice,
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedChoice = value;
+                          });
+                        },
                       ),
                     )
                   ],
