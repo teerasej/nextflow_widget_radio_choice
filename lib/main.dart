@@ -52,9 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
           style: TextStyle(fontSize: 30),
         ),
         Expanded(
-          child: ListView(
-            children: [
-              ListTile(
+          child: ListView.builder(
+            itemCount: question.choices.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
                 title: Text('1'),
                 leading: Radio(
                   toggleable: true,
@@ -66,44 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
-              ),
-              ListTile(
-                title: Text('2'),
-                leading: Radio(
-                  value: 2,
-                  groupValue: _selectedChoice,
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedChoice = value;
-                    });
-                  },
-                ),
-              ),
-              ListTile(
-                title: Text('3'),
-                leading: Radio(
-                  value: 3,
-                  groupValue: _selectedChoice,
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedChoice = value;
-                    });
-                  },
-                ),
-              ),
-              ListTile(
-                title: Text('4'),
-                leading: Radio(
-                  value: 4,
-                  groupValue: _selectedChoice,
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedChoice = value;
-                    });
-                  },
-                ),
-              )
-            ],
+              );
+            },
           ),
         )
       ],
