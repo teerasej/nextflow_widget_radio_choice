@@ -88,7 +88,29 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsets.all(10),
         child: SafeArea(
           child: RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              if (_selectedChoice == question.answerId) {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text('ถูกต้อง!'),
+                      content: Text('คุณตอบถูก'),
+                    );
+                  },
+                );
+              } else {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text('อุ้ย!'),
+                      content: Text('ลองใหม่อีกครั้งนะ'),
+                    );
+                  },
+                );
+              }
+            },
             color: Colors.blue,
             textColor: Colors.white,
             child: Text('ยืนยันคำตอบ'),
