@@ -86,11 +86,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(10),
-        child: RaisedButton(
-          onPressed: () {},
-          color: Colors.blue,
-          textColor: Colors.white,
-          child: Text('ยืนยันคำตอบ'),
+        child: SafeArea(
+          child: RaisedButton(
+            onPressed: () {},
+            color: Colors.blue,
+            textColor: Colors.white,
+            child: Text('ยืนยันคำตอบ'),
+          ),
         ),
       ),
     );
