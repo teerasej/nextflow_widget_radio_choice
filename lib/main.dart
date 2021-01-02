@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '1. จงหาคำตอบของ 1 + 1',
+          question.title,
           style: TextStyle(fontSize: 30),
         ),
         Expanded(
