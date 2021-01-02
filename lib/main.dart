@@ -44,76 +44,79 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+    var questionArea = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '1. จงหาคำตอบของ 1 + 1',
+          style: TextStyle(fontSize: 30),
         ),
-        body: Padding(
-          padding: EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        Expanded(
+          child: ListView(
             children: [
-              Text(
-                '1. จงหาคำตอบของ 1 + 1',
-                style: TextStyle(fontSize: 30),
+              ListTile(
+                title: Text('1'),
+                leading: Radio(
+                  toggleable: true,
+                  value: 1,
+                  groupValue: _selectedChoice,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedChoice = value;
+                    });
+                  },
+                ),
               ),
-              Expanded(
-                child: ListView(
-                  children: [
-                    ListTile(
-                      title: Text('1'),
-                      leading: Radio(
-                        toggleable: true,
-                        value: 1,
-                        groupValue: _selectedChoice,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedChoice = value;
-                          });
-                        },
-                      ),
-                    ),
-                    ListTile(
-                      title: Text('2'),
-                      leading: Radio(
-                        value: 2,
-                        groupValue: _selectedChoice,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedChoice = value;
-                          });
-                        },
-                      ),
-                    ),
-                    ListTile(
-                      title: Text('3'),
-                      leading: Radio(
-                        value: 3,
-                        groupValue: _selectedChoice,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedChoice = value;
-                          });
-                        },
-                      ),
-                    ),
-                    ListTile(
-                      title: Text('4'),
-                      leading: Radio(
-                        value: 4,
-                        groupValue: _selectedChoice,
-                        onChanged: (value) {
-                          setState(() {
-                            _selectedChoice = value;
-                          });
-                        },
-                      ),
-                    )
-                  ],
+              ListTile(
+                title: Text('2'),
+                leading: Radio(
+                  value: 2,
+                  groupValue: _selectedChoice,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedChoice = value;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: Text('3'),
+                leading: Radio(
+                  value: 3,
+                  groupValue: _selectedChoice,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedChoice = value;
+                    });
+                  },
+                ),
+              ),
+              ListTile(
+                title: Text('4'),
+                leading: Radio(
+                  value: 4,
+                  groupValue: _selectedChoice,
+                  onChanged: (value) {
+                    setState(() {
+                      _selectedChoice = value;
+                    });
+                  },
                 ),
               )
             ],
           ),
-        ));
+        )
+      ],
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(10),
+        child: questionArea,
+      ),
+    );
   }
 }
