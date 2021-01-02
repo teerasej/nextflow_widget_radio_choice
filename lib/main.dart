@@ -84,6 +84,15 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsets.all(10),
         child: questionArea,
       ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(10),
+        child: RaisedButton(
+          onPressed: () {},
+          color: Colors.blue,
+          textColor: Colors.white,
+          child: Text('ยืนยันคำตอบ'),
+        ),
+      ),
     );
   }
 }
