@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nextflow_widget_radio_choice/models/question_model.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +29,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  QuestionModel question = QuestionModel(
+    id: 1,
+    title: "ไก่กับไข่อะไรเกิดก่อนกัน",
+    choices: [
+      Choice(id: 1, title: "ไก่"),
+      Choice(id: 2, title: "ไข่"),
+      Choice(id: 3, title: "อุบัติขึ้นพร้อมกัน")
+    ],
+    answerId: 3,
+  );
+
   int _selectedChoice;
 
   @override
