@@ -55,11 +55,13 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView.builder(
             itemCount: question.choices.length,
             itemBuilder: (BuildContext context, int index) {
+              var choice = question.choices[index];
+
               return ListTile(
-                title: Text('1'),
+                title: Text(choice.title),
                 leading: Radio(
                   toggleable: true,
-                  value: 1,
+                  value: choice.id,
                   groupValue: _selectedChoice,
                   onChanged: (value) {
                     setState(() {
