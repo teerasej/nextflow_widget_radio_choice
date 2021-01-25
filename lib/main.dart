@@ -89,27 +89,25 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SafeArea(
           child: RaisedButton(
             onPressed: () {
+              var title = "";
+              var message = "";
+
               if (_selectedChoice == question.answerId) {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: Text('ถูกต้อง!'),
-                      content: Text('คุณตอบถูก'),
-                    );
-                  },
-                );
+                title = "ถูกต้อง!";
+                message = "ได้ 1 คะแนน";
               } else {
-                showDialog(
+                title = "อุ้ย!";
+                message = "ลองใหม่อีกครั้งนะ";
+              }
+
+              showDialog(
                   context: context,
                   builder: (context) {
                     return AlertDialog(
-                      title: Text('อุ้ย!'),
-                      content: Text('ลองใหม่อีกครั้งนะ'),
+                      title: Text(title),
+                      content: Text(message),
                     );
-                  },
-                );
-              }
+                  });
             },
             color: Colors.blue,
             textColor: Colors.white,
